@@ -7,7 +7,7 @@ export default class IceCreamBuilder extends Component {
     state = {};
   render() {
     return (
-        <div className={['container', classes.container].join( )} >
+        <div className={['container', classes.container].join(" ")}>
             <IceCream/>
             <Builder/>
         </div>
