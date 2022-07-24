@@ -1,7 +1,8 @@
-import React from 'react'
-import classes from './iceCream.module.css'
-import Scoop from './Scoop/Scoop'
-const iceCream = () => {
+import React from 'react';
+import classes from './iceCream.module.css';
+import Scoop from './Scoop/Scoop';
+const iceCream = ({items}) => {
+  const flavours = Object.keys(items);
   return (
     <div>
             <div className={classes.icecream} >
@@ -9,10 +10,12 @@ const iceCream = () => {
               {/* <!-- <p>Please start adding scoops</p> --> */}
              
               {/* scoops go here */}
-              <Scoop/>
+              {flavours.map((flavour)=>(
+                <Scoop key={flavour} scoop={flavour}/>
+              ))}
               <div className={classes.cherry}></div>
             </div>
-          </div>
+   </div>
   )
 }
 
